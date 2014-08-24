@@ -1,6 +1,6 @@
 # MongoidAppender
 
-TODO: Write a gem description
+MongoidAppender is a simple implementation of a standard `Logging::Appender` using [Mongoid](http://www.mongoid.org), useful for writing log messages into MongoDB. MongoidAppender has been tested with both Mongoid 3.x and 4.0.
 
 ## Installation
 
@@ -20,12 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure MongoidAppender as you would a normal `Logging::Appender`. For example, to configure your root logger to output all messages to `stdout` but only write `:warn` messages and above to MongoDB, you can use the following code:
 
-## Contributing
+```
+Logging.logger.root.add_appenders(
+    Logging.appenders.stdout,
+	MongoidAppender.new('mongoid', :level => :warn)
+)
+```
 
-1. Fork it ( https://github.com/[my-github-username]/mongoid_appender/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+By default, MongoidAppender will write log documents into a MongoDB collection named `logs`. Every document has the following fields:
+
+* `level` - The event level (debug, info, warn, error, etc.)
+* `logger` - The name of the logger
+* `message` - The log message
+* `exception` - The log exception (if any)
+* `backtrace` - The log backtrace (if any)
+
+Simple!
