@@ -22,11 +22,11 @@ Or install it yourself as:
 
 Configure MongoidAppender as you would a normal `Logging::Appender`. For example, to configure your root logger to output all messages to `stdout` but only write `:warn` messages and above to MongoDB, you can use the following code:
 
-```
+```ruby
 require 'logging'
 require 'mongoid'
 
-<some code to setup mongoid>
+# Some code to set up Mongoid here...
 
 Logging.logger.root.add_appenders(
     Logging.appenders.stdout,
