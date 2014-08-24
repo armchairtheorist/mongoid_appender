@@ -1,6 +1,6 @@
 # MongoidAppender
 
-MongoidAppender is a simple implementation of a standard `Logging::Appender` using [Mongoid](http://www.mongoid.org), useful for writing log messages into MongoDB. MongoidAppender has been tested with both Mongoid 3.x and 4.0.
+MongoidAppender is a simple implementation of a standard `Logging::Appender` for Tim Pease's [Logging](http://github.com/TwP/logging) framework using [Mongoid](http://www.mongoid.org), useful for writing log messages into MongoDB. MongoidAppender has been tested with both Mongoid 3.x and 4.0.
 
 ## Installation
 
@@ -23,6 +23,11 @@ Or install it yourself as:
 Configure MongoidAppender as you would a normal `Logging::Appender`. For example, to configure your root logger to output all messages to `stdout` but only write `:warn` messages and above to MongoDB, you can use the following code:
 
 ```
+require 'logging'
+require 'mongoid'
+
+<some code to setup mongoid>
+
 Logging.logger.root.add_appenders(
     Logging.appenders.stdout,
 	MongoidAppender.new('mongoid', :level => :warn)
