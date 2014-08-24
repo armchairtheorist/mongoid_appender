@@ -1,12 +1,11 @@
-require "mongoid_appender"
+require File.expand_path("../lib/mongoid_appender", __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name          = "mongoid_appender"
   spec.version       = MongoidAppender::VERSION
   spec.authors       = ["Jonathan Wong"]
   spec.email         = ["jonathan@armchairtheorist.com"]
-  spec.summary       = "Simple implementation of a standard logging appender to write log messages into MongoDB using Mongoid."
-  spec.description   = "Simple implementation of a standard logging appender to write log messages into MongoDB using Mongoid."
+  spec.summary       = "Simple implementation of a logging appender for Tim Pease's Logging framework using Mongoid."
   spec.homepage      = "http://github.com/armchairtheorist/mongoid_appender"
   spec.license       = "MIT"
 
@@ -16,6 +15,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 
-  spec.add_runtime_dependency "logging"
-  spec.add_runtime_dependency "mongoid"
+  spec.add_dependency "logging", ">= 1.8.0"
+  spec.add_dependency "mongoid", ">= 3.0.0"
 end
