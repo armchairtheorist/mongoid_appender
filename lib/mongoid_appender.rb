@@ -3,7 +3,7 @@ require "mongoid"
 
 class MongoidAppender < Logging::Appender
 
-	VERSION = "0.0.1"
+	VERSION = "0.0.2"
 
 	class Log
 		include Mongoid::Document
