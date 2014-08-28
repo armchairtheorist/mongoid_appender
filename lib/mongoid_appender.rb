@@ -3,7 +3,7 @@ require "mongoid"
 
 class MongoidAppender < Logging::Appender
 
-	VERSION = "0.0.2"
+	VERSION = "0.0.3"
 
 	class Log
 		include Mongoid::Document
@@ -44,13 +44,7 @@ class MongoidAppender < Logging::Appender
 				)
 			end
 		else
-			text = event.to_s
-
-			Log.create!(
-				level: text.split(" ")[0],
-				logger: text.split(" ")[1],
-				message: text[text.index(" : ") + 3..-1].split("\n\t")[0]
-			) unless text.empty?
+			Log.create!(message: event.to_s)
 		end
 	end
 end
