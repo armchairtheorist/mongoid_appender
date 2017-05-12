@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jonathan Wong"]
   spec.email         = ["jonathan@armchairtheorist.com"]
   spec.summary       = "Simple implementation of a logging appender for Tim Pease's Logging framework using Mongoid."
-  spec.homepage      = "http://github.com/armchairtheorist/mongoid_appender"
+  spec.homepage      = "https://github.com/armchairtheorist/mongoid_appender"
   spec.license       = "MIT"
 
   spec.files         = Dir["{lib}/**/*.rb"]
