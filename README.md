@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/mongoid_appender.svg)](https://badge.fury.io/rb/mongoid_appender)
+[![Code Climate](https://codeclimate.com/github/armchairtheorist/mongoid_appender/badges/gpa.svg)](https://codeclimate.com/github/armchairtheorist/mongoid_appender)
+
 # MongoidAppender
 
 MongoidAppender is a simple implementation of a standard `Logging::Appender` for Tim Pease's [Logging](http://github.com/TwP/logging) framework using [Mongoid](http://www.mongoid.org), useful for writing log messages into MongoDB. MongoidAppender has been tested with both Mongoid 3.x and 4.0.
